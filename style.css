@@ -37,6 +37,10 @@ body{
 }
 
 #threeD{
+    transform: translateY(100px);
+    transition: 0.8s;
+    scale: 0.5;
+    opacity: 0;
     width: 300px;
     height: 300px;
     position: absolute;
@@ -44,6 +48,8 @@ body{
 }
 
 #menu {
+    transition: 0.8s;
+    top: -100px;
     font-family: "Orbitron", Verdana, Geneva, Tahoma, sans-serif;
     grid-area: menu;
     background-color: white;
@@ -75,7 +81,7 @@ body{
     --background-color: white;
     border: solid black 2px;
     position: fixed;
-    bottom: 30px;
+    bottom: -50px;
     width: 125px;
     height: 35px;
     background-color: white;
@@ -84,15 +90,16 @@ body{
     letter-spacing: 2px;
     font-weight: normal;
     font-size: 15px;
-    transition: 0.2s;
-    cursor: crosshair; 
+    transition: 0.4s;
+    cursor: crosshair;
+    --move: -5px;
   }
 
   #scrollButton:before {
     content: "";
     position: absolute;
     left: -5px;
-    top: -5px;
+    top: var(--move);
     width: 10px;
     height: 10px;
     background-color: var(--background-color);
@@ -104,7 +111,7 @@ body{
     content: "";
     position: absolute;
     right: -5px;
-    bottom: -5px;
+    bottom: var(--move);
     width: 10px;
     height: 10px;
     background-color: var(--background-color);
@@ -125,10 +132,11 @@ body{
   }
 
   #licho0,#licho1{
+    transition: 0.8s;
     background-color: white;
     width: 100px;
     height: 50px;
-    top: 20px;
+    top: -150px;
     position: absolute;
     border-bottom: solid black 2px;
   }
