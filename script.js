@@ -1,14 +1,14 @@
 window.onload = function () {
-    let licho0 = document.getElementById("licho0");
-    let licho1 = document.getElementById("licho1");
+    let koso0 = document.getElementById("koso0");
+    let koso1 = document.getElementById("koso1");
     document.getElementById("menu").style.top = "0px";
     document.getElementById("threeD").style.scale = 1;
     document.getElementById("threeD").style.opacity = 1;
     document.getElementById("threeD").style.transform = "translateX(0px)";
-    licho0.style.top = "20px";
-    licho1.style.top = "20px";
-    licho0.style.left = (window.innerWidth / 2) - 70 + "px";
-    licho1.style.right = (window.innerWidth / 2) - 70 + "px";
+    koso0.style.top = "20px";
+    koso1.style.top = "20px";
+    koso0.style.left = (window.innerWidth / 2) - 70 + "px";
+    koso1.style.right = (window.innerWidth / 2) - 70 + "px";
     document.getElementById("scrollButton").style.bottom = "30px";
 
     // Scene setup
@@ -86,5 +86,5 @@ document.getElementById("scrollButton").addEventListener("click", function() {
     scrollButton.style.setProperty('--move', '30px');
     scrollButton.style.letterSpacing = "5px";
     scrollButton.style.bottom = "-50px";
-    window.scrollTo(0, 300);
+    window.scrollTo(0, 600);
 });
