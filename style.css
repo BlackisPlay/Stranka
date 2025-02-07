@@ -13,7 +13,12 @@ body{
     grid-template-areas: 
       "menu menu menu"
       "modelView modelView modelView"
-      "main main main"; 
+      "main main main";
+      --color: rgb(230, 230, 201);
+      background-color: beige;
+      background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+          linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+      background-size: 55px 55px;
 }
 
 #modelView{
@@ -73,12 +78,13 @@ body{
 #modelView {
     grid-area: modelView;
 }
+
 #main {
-    background-color: beige;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     grid-area: main;
 }
-
-
 
 #scrollButton {
     --background-color: white;
@@ -122,19 +128,7 @@ body{
     border: solid black 2px;
   }
 
-
-#background {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    --color: rgb(230, 230, 201);
-    background-color: beige;
-    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
-        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
-    background-size: 55px 55px;
-  }
-
-  #licho0,#licho1{
+  #koso0,#koso1{
     transition: 0.8s;
     background-color: white;
     width: 100px;
@@ -144,12 +138,82 @@ body{
     border-bottom: solid black 2px;
   }
 
-  #licho0{
+  #koso0{
     transform: skew(30deg);
     border-left: solid black 2px;
   }
 
-  #licho1{
+  #koso1{
     border-right: solid black 2px;
     transform: skew(-30deg);
+  }
+
+  #calc{
+    font-family: "Orbitron", Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    background-color: white;
+    clip-path: polygon(10% 0%,
+                       100% 0,
+                       100% 94%,
+                       90% 100%,
+                       0 100%,
+                       0 7%);
+  }
+
+  #calcBorder{
+    position: absolute;
+    height: 404px;
+    width: 304px;
+    background-color: black;
+    clip-path: polygon(10% 0%,
+                       100% 0,
+                       100% 94%,
+                       90% 100%,
+                       0 100%,
+                       0 7%);
+  }
+
+  #calc input{
+    width: 200px;
+    height: 20px;
+    border: solid black 2px;
+    overflow: hidden;
+    box-shadow: 5px 5px black;
+    transition: 0.2s;
+  }
+
+  #calc input::placeholder{
+    font-family: "Orbitron", Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    transform: translateX(5px);
+    font-size: 13px;
+    transition: 0.2s;
+  }
+
+  #calc input:focus{
+    box-shadow: 0px 0px black;
+  }
+
+  #calc input:focus::placeholder{
+    transform: translateX(-100px);
+  }
+
+  #calc h2{
+    margin: 0;
+    font-size: 30px;
+  }
+
+  #calc button{
+    font-family: "Orbitron", Verdana, Geneva, Tahoma, sans-serif;
+    width: 100px;
+    height: 30px;
+    border: solid black 2px;
+    background-color: white;
   }
