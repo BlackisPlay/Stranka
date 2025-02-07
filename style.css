@@ -149,6 +149,7 @@ body{
   }
 
   #calc{
+    transform: translateY(100px);
     font-family: "Orbitron", Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     justify-content: space-evenly;
@@ -168,6 +169,7 @@ body{
   }
 
   #calcBorder{
+    transform: translateY(100px);
     position: absolute;
     height: 404px;
     width: 304px;
