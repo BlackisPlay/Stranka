@@ -40,7 +40,7 @@ window.onload = function () {
     let model;
     loader.load("house.glb", function(gltf) {
         model = gltf.scene;
-        model.scale.set(1.5, 2, 2);
+        model.scale.set(1.6, 2.5, 2);
         model.position.set(0, -1, 0);
         scene.add(model);
         animate();
