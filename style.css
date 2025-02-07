@@ -82,7 +82,7 @@ body{
     color: black;
     font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: 2px;
-    font-weight: 400;
+    font-weight: normal;
     font-size: 15px;
     transition: 0.2s;
     cursor: crosshair; 
