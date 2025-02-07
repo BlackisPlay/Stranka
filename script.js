@@ -1,9 +1,15 @@
 window.onload = function () {
     let licho0 = document.getElementById("licho0");
     let licho1 = document.getElementById("licho1");
-
+    document.getElementById("menu").style.top = "0px";
+    document.getElementById("threeD").style.scale = 1;
+    document.getElementById("threeD").style.opacity = 1;
+    document.getElementById("threeD").style.transform = "translateX(0px)";
+    licho0.style.top = "20px";
+    licho1.style.top = "20px";
     licho0.style.left = (window.innerWidth / 2) - 70 + "px";
     licho1.style.right = (window.innerWidth / 2) - 70 + "px";
+    document.getElementById("scrollButton").style.bottom = "30px";
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -50,6 +56,17 @@ window.onload = function () {
         if (model) model.rotation.y += 0.01;
         renderer.render(scene, camera);
     }
+
+    setTimeout(() => {
+        document.getElementById("podnadpis").innerHTML = "3D !o#e D@mu";
+        setTimeout(() => {
+            document.getElementById("podnadpis").innerHTML = "3D M#d#l Domu";
+            setTimeout(() => {
+                document.getElementById("podnadpis").innerHTML = "3D Model Domu";
+                
+            }, 100);
+        }, 100);
+    }, 100);
 };
 
 let scrollButton = document.getElementById("scrollButton");
@@ -57,9 +74,7 @@ let scrollButton = document.getElementById("scrollButton");
 window.addEventListener("scroll", function() {
     if(window.scrollY == 0){
         scrollButton.style.bottom = "30px";
-        scrollButton.style.backgroundColor = "white";
-        scrollButton.style.setProperty('--background-color', 'white');
-        scrollButton.style.color = "black";
+        scrollButton.style.setProperty('--move', '-5px');
         scrollButton.style.letterSpacing = "2px";
     }else{
         scrollButton.style.bottom = "-50px";
@@ -68,10 +83,8 @@ window.addEventListener("scroll", function() {
 });
 
 document.getElementById("scrollButton").addEventListener("click", function() {
-    scrollButton.style.backgroundColor = "black";
-    scrollButton.style.setProperty('--background-color', 'black');
-    scrollButton.style.color = "white";
+    scrollButton.style.setProperty('--move', '30px');
     scrollButton.style.letterSpacing = "5px";
-        scrollButton.style.bottom = "-50px";
-        window.scrollTo(0, 300);
+    scrollButton.style.bottom = "-50px";
+    window.scrollTo(0, 300);
 });
