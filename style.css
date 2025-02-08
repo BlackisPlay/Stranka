@@ -28,7 +28,7 @@ body{
 #modelView{
   height: 500px;
   width: 100vw;
-  transition: 0.6s;
+  transition: 0.4s;
     margin: 0 0 0 0;
     font-size: 30px;
     font-style: italic;
@@ -43,7 +43,7 @@ body{
 }
 
 #podnadpis{
-  transition: 0.6s;
+  transition: 0.4s;
     font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 200;
     text-align: center; /* Ensures the text is centered */
