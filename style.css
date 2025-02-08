@@ -1,3 +1,7 @@
+:root{
+  --menu-height: 60px;
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -8,20 +12,23 @@ body{
     margin: 0;
     display: grid; 
     grid-template-columns: 1fr; 
-    grid-template-rows: 60px 520px 600px; 
+    grid-template-rows: 60px 500px 600px; 
     gap: 0px 0px; 
     grid-template-areas: 
       "menu menu menu"
       "modelView modelView modelView"
       "main main main";
-      --color: rgb(230, 230, 201);
-      background-color: beige;
+      --color: rgb(245, 245, 219);
+      background-color: rgb(251, 251, 242);
       background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
           linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
       background-size: 55px 55px;
 }
 
 #modelView{
+  height: 500px;
+  width: 100vw;
+  transition: 0.6s;
     margin: 0 0 0 0;
     font-size: 30px;
     font-style: italic;
@@ -29,10 +36,14 @@ body{
     display: flex;
     align-items: center;  /* Aligns items vertically */
     justify-content: center; /* Centers content */
-    position: relative;  /* Allows absolute positioning */
+    position: fixed;  /* Allows absolute positioning */
+    top: var(--menu-height);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #podnadpis{
+  transition: 0.6s;
     font-family: "Poppins", Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 200;
     text-align: center; /* Ensures the text is centered */
@@ -55,7 +66,11 @@ body{
     justify-content: center;
 }
 
+
+
 #menu {
+    height: var(--menu-height);
+    width: 100%;
     transition: 0.8s;
     top: -100px;
     font-family: "Orbitron", Verdana, Geneva, Tahoma, sans-serif;
@@ -80,6 +95,7 @@ body{
 }
 
 #main {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,6 +103,9 @@ body{
 }
 
 #scrollButton {
+  z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
     --background-color: white;
     border: solid black 2px;
     position: fixed;
@@ -149,6 +168,7 @@ body{
   }
 
   #calc{
+    top: 50px;
     transform: translateY(100px);
     font-family: "Orbitron", Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
@@ -169,6 +189,7 @@ body{
   }
 
   #calcBorder{
+    top: 48px;
     transform: translateY(100px);
     position: absolute;
     height: 404px;
