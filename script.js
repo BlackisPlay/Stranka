@@ -71,28 +71,28 @@ window.onload = function () {
 
 let scrollButton = document.getElementById("scrollButton");
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", () => {
     if(window.scrollY <= 100){
         document.getElementById("threeD").style.filter = "blur(0px)";
         document.getElementById("threeD").style.scale = 1;
         document.getElementById("podnadpis").style.filter = "blur(0px)";
         document.getElementById("podnadpis").style.scale = 1;
-        scrollButton.style.bottom = "30px";
-        scrollButton.style.setProperty('--move', '-5px');
-        scrollButton.style.letterSpacing = "2px";
+        document.getElementById("triangle").style.borderTop = "10px solid black";
+        document.getElementById("triangle").style.borderBottom = "0px solid black";
     }else{
-        document.getElementById("threeD").style.filter = "blur(20px)";
+        document.getElementById("triangle").style.borderBottom = "10px solid black";
+        document.getElementById("triangle").style.borderTop = "0px solid black";
+        document.getElementById("threeD").style.filter = "blur(10px)";
         document.getElementById("threeD").style.scale = 0.8;
-        document.getElementById("podnadpis").style.filter = "blur(20px)";
+        document.getElementById("podnadpis").style.filter = "blur(10px)";
         document.getElementById("podnadpis").style.scale = 0.8;
-        scrollButton.style.bottom = "-50px";
     }
     
 });
 
-document.getElementById("scrollButton").addEventListener("click", function() {
-    scrollButton.style.setProperty('--move', '30px');
-    scrollButton.style.letterSpacing = "5px";
-    scrollButton.style.bottom = "-50px";
-    window.scrollTo(0, 600);
+document.getElementById("scrollButton").addEventListener("click", () => {
+    window.scrollTo(0, window.scrollY > 100 ? 0 : 600);
+    if(window.scrollY <= 100){
+        document.getElementById("scrollButton").style.setProperty('--move', '30px');
+    }else document.getElementById("scrollButton").style.setProperty('--move', '-5px');
 });
