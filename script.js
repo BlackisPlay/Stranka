@@ -72,11 +72,19 @@ window.onload = function () {
 let scrollButton = document.getElementById("scrollButton");
 
 window.addEventListener("scroll", function() {
-    if(window.scrollY == 0){
+    if(window.scrollY <= 100){
+        document.getElementById("threeD").style.filter = "blur(0px)";
+        document.getElementById("threeD").style.scale = 1;
+        document.getElementById("podnadpis").style.filter = "blur(0px)";
+        document.getElementById("podnadpis").style.scale = 1;
         scrollButton.style.bottom = "30px";
         scrollButton.style.setProperty('--move', '-5px');
         scrollButton.style.letterSpacing = "2px";
     }else{
+        document.getElementById("threeD").style.filter = "blur(20px)";
+        document.getElementById("threeD").style.scale = 0.8;
+        document.getElementById("podnadpis").style.filter = "blur(20px)";
+        document.getElementById("podnadpis").style.scale = 0.8;
         scrollButton.style.bottom = "-50px";
     }
     
